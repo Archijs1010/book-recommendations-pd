@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "book_review_user_24092025";
 $password = "password";
-$dbname = "book_review_24092025B";
+$dbname = "book_review_24092025";
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -32,7 +32,6 @@ $conn = null;
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
-    Welcome <?php echo $_POST["vards"]; ?><br>
-    Your surname is: <?php echo $_POST["uzvards"]; ?>
+    <br>Welcome <?php echo $_POST["full_name"]; ?><br>
 </body>
 </html>

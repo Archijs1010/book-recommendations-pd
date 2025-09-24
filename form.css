@@ -2,7 +2,9 @@ form {
     width: 600px;
     margin: auto;
     border: 2px blueviolet;
-
+    border-style: solid;
+    text-align: center;
+    background-color: aliceblue;
 }
 label {
     font-weight: bold;

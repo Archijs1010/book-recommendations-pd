@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
-    <form>
-        <label for="vards">Vards</label>
-        <input type="text" name=""><br>
-        <label for="uzvards">Uzvards</label>
-        <input for="text" name="uzvards"><br>
+    <form action="submit.php" method="POST">
+        <label for="full_name">Vards un Uzvards</label>
+        <input type="text" name="full_name"><br>
 
+        <label for="nosaukums">Nosaukums</label>
+        <input type="text" name="nosakums"><br>
+
+        <label for="apraksts">Apraksts</label>
+        <input type="text" name="apraksts"><br>
+        
         <label for="limenis">Select a level:</label>
         <select name="limenis" form="limenisform"><br>
             <option value=1>Nelesama</option>
@@ -21,13 +25,7 @@
             <option value=4>Laba</option>
             <option value=5>Lieliska</option>
         </select><br>
-
-        <label for="nosaukums">Nosaukums</label>
-        <input type="text" name="nosakums"><br>
-        <label for="apraksts">Apraksts</label>
-        <input type="text" name="apraksts"><br>
         <input type="submit" name="submit">
     </form>
-    
 </body>
 </html>
