@@ -4,22 +4,24 @@ $username = "book_review_user_24092025";
 $password = "password";
 $dbname = "book_review_24092025B";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-$sql = "SELECT full_name, book_title, review_text, rating FROM book_review";
-$result = mysqli_query($conn, $sql);
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if (mysqli_num_rows($result) > 0) {
-  while($row = mysqli_fetch_assoc($result)) {
-    echo "full_name: " . $row["full_name"]. " - book_title: " . $row["book_title"]. " - review_text" . $row["review_text"]. " - rating" . $row["rating"]."<br>";
-  }
-} else {
-  echo "0 results";
-}
+  // prepare sql and bind parameters
+  $stmt = $conn->prepare("INSERT INTO book_review (full_name, book_title, review_text, rating)
+  VALUES (:full_name, :book_title, :review_text, :rating)");
+  $stmt->bindParam(':full_name', $full_name);
+  $stmt->bindParam(':book_title', $book_title);
+  $stmt->bindParam(':review_text', $review_text);
+  $stmt->bindParam(':rating', $rating);
 
-mysqli_close($conn);
+  echo "New records created successfully";
+} catch(PDOException $e) {
+  echo "Error: " . $e->getMessage();
+}
+$conn = null;
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +29,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datu Apstrāde</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     Welcome <?php echo $_POST["vards"]; ?><br>
