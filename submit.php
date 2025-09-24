@@ -29,6 +29,7 @@ mysqli_close($conn);
     <title>Datu Apstrāde</title>
 </head>
 <body>
-    <a>
+    Welcome <?php echo $_POST["vards"]; ?><br>
+    Your surname is: <?php echo $_POST["uzvards"]; ?>
 </body>
 </html>
