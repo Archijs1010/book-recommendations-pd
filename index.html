@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gramatu vertesana</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <form>
@@ -13,19 +14,20 @@
         <input for="text" name="uzvards"><br>
 
         <label for="limenis">Select a level:</label>
-        <select name="limenis" form="limenisform">
-            <option value="nelesama">Nelesama</option>
-            <option value="slikta">Slikta</option>
-            <option value="viduveja">Viduveja</option>
-            <option value="laba">Laba</option>
-            <option value="lieliska">Lieliska</option>
-        </select>
+        <select name="limenis" form="limenisform"><br>
+            <option value=1>Nelesama</option>
+            <option value=2>Slikta</option>
+            <option value=3>Viduveja</option>
+            <option value=4>Laba</option>
+            <option value=5>Lieliska</option>
+        </select><br>
 
         <label for="nosaukums">Nosaukums</label>
-        <input type="text" name="nosakums">
+        <input type="text" name="nosakums"><br>
         <label for="apraksts">Apraksts</label>
-        <input type="text"></form>input>
+        <input type="text" name="apraksts"><br>
+        <input type="submit" name="submit">
     </form>
-    <input type="submit" name="submit">
+    
 </body>
 </html>

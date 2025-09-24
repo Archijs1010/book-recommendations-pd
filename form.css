@@ -1,0 +1,10 @@
+form {
+    width: 600px;
+    margin: auto;
+    border: 2px blueviolet;
+
+}
+label {
+    font-weight: bold;
+    font-size: 2rem;
+}
